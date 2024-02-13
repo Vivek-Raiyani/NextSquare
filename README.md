@@ -7,7 +7,6 @@ create a image model to store mulitple images lets say 5 images or to store path
 
 create web interface of login. home page.properties
 
-
 how will you implement the wishlist functionlaity
 
 boootstrap -- how to customize the properties
