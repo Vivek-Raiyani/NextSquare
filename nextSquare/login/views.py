@@ -3,7 +3,7 @@ from django.shortcuts import render
 
 # Create your views here.
 def login(request):
-          return render(request,'home/base.html')
+          return render(request,'login/login.html')
           #return render(request,template,context={})
 
 def signup(request):

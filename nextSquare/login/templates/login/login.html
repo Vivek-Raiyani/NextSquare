@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+          <head>
+          {% load bootstrap5 %}
+          {% bootstrap_css %}
+          {% bootstrap_javascript %}
+          </head>
+
+          <body>
+          <section class='container'>
+          <form action="" method="post">
+          {% csrf_token %}
+          <!-- {{ form }}  -->
+          <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name='email'>
+                    <label for="floatingInput">Email address</label>
+          </div>
+          
+          <div class="form-floating">
+                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                    <label for="floatingPassword">Password</label>
+          </div> 
+          <br>
+          <div class="form-floating">
+                    <input type="text" class="form-control" id="floatingtext" placeholder="Password">
+                    <label for="floatingPassword">Username</label>
+          </div>
+
+          
+          <br>
+
+          <div class="form-floating">
+                    <textarea class="form-control" id="floatingTextarea2" placeholder="Address" style="height: 100px" ></textarea>
+                    <label for="floatingTextarea2">address</label>
+          </div>         
+
+          
+          </form>
+          </section>
+          </body>
+
+</html>
