@@ -18,7 +18,7 @@ def login(request):
                               return HttpResponse('error')
                             
 
-          return render(request,'login/login.html')
+          return render(request,'login/signup.html')
           #return render(request,template,context={})
 
 def signup(request):
@@ -33,5 +33,5 @@ def signup(request):
                               return HttpResponse('successful signup')
                     else:
                               return HttpResponse('error')
-        return HttpResponse('hello')
-        #return render(request, tmeplate, content={})
+        #return HttpResponse('hello')
+        return render(request, 'login/signup.html')

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+          <title>signup</title>
+          {% load bootstrap5 %}
+          {% bootstrap_css %}
+          {% bootstrap_javascript %}
+</head>
+
+          <body style='background-color:#f4f4f4; color=#08010e; '>
+                    <section class='container' style='padding-bottom:1rem;'>
+                              
+                              <form action="{% url 'login:signup' %}" method="post">
+                                        {% csrf_token %}
+                                        
+                                        <div class='container mt-5' style='width:500px; border:2px solid #4f033d ; border-radius:10px ;padding :3rem; text-align:center '>
+                                                  <!-- inline style to css file-->
+                                                  <h1 class='mb-4'>signup</h1>
+
+                                                  <div class='row '>
+                                                            <div class='col'>
+                                                                      <div class="form-floating mb-3">
+                                                                      <input type="email" class="form-control" id="floatingInput1" placeholder="first name" name='firstname'>
+                                                                      <label for="floatingInput1">firstname</label>
+                                                                      </div>
+                                                            </div>
+                                                            <div class='col'>
+                                                                      <div class="form-floating mb-3">
+                                                                                <input type="text" class="form-control" id="floatingInput2" placeholder="last name" name='lastname'>
+                                                                                <label for="floatingInput2">lastname</label>
+                                                                      </div>
+                                                            </div>
+                                                  </div>
+
+                                                  <div class='mb-3 form-floating'>
+                                                            <input type="text" class="form-control" id="username" name='username' placeholder="username">
+                                                            <label for="username">Usename</label>
+                                                  </div>
+
+                                                  <div class="form-floating mb-3">
+                                                            <input type="email" class="form-control" id="floatingInput3" placeholder="name@example.com" name='email'>
+                                                            <label for="floatingInput3">Email address</label>
+                                                  </div>
+
+                                                  <div class="form-floating mb-3">
+                                                            <input type="password" class="form-control" id="floatingPassword1" placeholder="Password" name='password1'>
+                                                            <label for="floatingPassword1">Password</label>
+                                                  </div>
+
+                                                  <div class="form-floating mb-4">
+                                                            <input type="password" class="form-control" id="floatingPassword2" placeholder="Password" name='password2'>
+                                                            <label for="floatingPassword2">Confirm Password</label>
+                                                  </div>
+
+                                                  <div class="mb-4" style='text-align:left'><!-- inline style to css file-->
+                                                            <label for="formFile" class="form-label">Select Profile image</label>
+                                                            <input class="form-control" type="file" id="formFile" name='profile_image'>
+                                                  </div>
+                                                  
+                                                  <input type='submit' class="btn btn-outline" value='submit' style='background-color:#4f033d ; color:#f4f4f4'>
+                                        </div>
+                              </form>
+                    </section>
+          </body>
+</html>
