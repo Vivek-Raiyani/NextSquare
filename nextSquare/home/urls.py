@@ -4,6 +4,7 @@ from . import views
 
 from django.conf.urls.static import static
 
+app_name='home'
 urlpatterns = [
           path('base',views.home,name='homepage'),
 ]

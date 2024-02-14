@@ -15,6 +15,7 @@ class Persons(models.Model):
     type_of_user = models.CharField(max_length=8, choices=TYPE_CHOICES)
     #id_proof = models.CharField(max_length=255, null=True)
     date_of_birth = models.DateField(null=True)
+    profile_img= models.ImageField(null=True,blank=True)
 
 class Properties(models.Model):
     property_id = models.AutoField(primary_key=True)

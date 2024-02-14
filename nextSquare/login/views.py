@@ -10,10 +10,10 @@ def log(request):
         if request.method=='POST':
                 username=request.POST['user']
                 password=request.POST['password']
-                if User.objects.filter(username=username).exists():
-                        user=authenticate(username=username,password=password)
+                user=authenticate(username=username,password=password)
+                if user is not None:
                         login(request,user)
-                        return redirect(request,'home/index.html')
+                        return redirect('home:homepage')
                 else:
                         return HttpResponse('invalid credentials')# redirect to login with roor tost
                             
@@ -44,7 +44,7 @@ def signup(request):
         #return HttpResponse('hello')
         return redirect(request, 'login/signup.html')
 
-def logout(request):
-
+def logo(request):
+        logout(request)
         # code to logout the user
-        return HttpResponse('hello')
+        return redirect('home:homepage')
