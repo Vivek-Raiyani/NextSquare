@@ -1,45 +1,41 @@
 <!DOCTYPE html>
 <html>
-          <head>
+<head>
+          <title>login</title>
           {% load bootstrap5 %}
           {% bootstrap_css %}
           {% bootstrap_javascript %}
-          </head>
+</head>
 
-          <body>
-          <section class='container'>
-          <form action="{% url 'login:signup' %}" method="post">
-          {% csrf_token %}
-          <!-- {{ form }}  -->
-                    <div class="mb-3">
-                              <label for="username" class="form-label">username</label>
-                              <input type="text" class="form-control" id="username" name='username'>
-                    </div>
+          <body style='background-color:#f4f4f4; color=#08010e; '>
+                    <section class='container' style='padding-bottom:1rem;'>
+                              
+                              <form action="{% url 'login:login' %}" method="post">
+                                        {% csrf_token %}
+                                        
+                                        <div class='container mt-5' style='width:500px; border:2px solid #4f033d ; border-radius:10px ;padding :3rem; text-align:center '>
+                                                  <!-- inline style to css file-->
+                                                  <h1 class='mb-4'>Login</h1>
 
-                    <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name='email'>
-                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-                    </div>
-                    <div class="mb-3">
-                              <label for="exampleInputPassword1" class="form-label">Password</label>
-                              <input type="password" class="form-control" id="exampleInputPassword1" name='password1'>
-                    </div>
-                    <div class="mb-3">
-                              <label for="exampleInputPassword2" class="form-label">Confirm Password</label>
-                              <input type="password" class="form-control" id="exampleInputPassword2" name='password2'>
-                    </div>
+                                                  <div class="form-floating mb-3">
+                                                            <input type="text" class="form-control" id="floatingInput" placeholder="Username" name='user'>
+                                                            <label for="floatingInput">Username</label>
+                                                  </div>
 
-                    <div class="mb-3 form-check">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-          </form>       
+                                                  <div class="form-floating mb-3">
+                                                            <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name='password'>
+                                                            <label for="floatingPassword">Password</label>
+                                                  </div>
 
-          
-          </form>
-          </section>
+                                                  <div class="mb-3" style='text-align:right;'>
+                                                  <a href="{% url 'login:login' %}" style='color:#4f033d; text-decoration:none;' class='btn'>forget password?</a>
+                                                  </div>
+                                                  
+                                                  
+                                                  <input type="submit" class="btn " style='background-color:#4f033d ; color:#f4f4f4;' value='Login'>
+                                                  <a href="{% url 'login:signup' %}" class="btn " style='background-color:#4f033d ; color:#f4f4f4;'>Signup</a>
+                                        </div>
+                              </form>
+                    </section>
           </body>
-
 </html>

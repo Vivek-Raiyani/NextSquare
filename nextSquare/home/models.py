@@ -1,20 +1,19 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
-from django.db import models
 
 class Persons(models.Model):
-    person_id = models.AutoField(primary_key=True)
-    name = models.CharField(max_length=255)
+    user=models.OneToOneField(User,null=True,on_delete=models.CASCADE)
+    name = models.CharField(max_length=255,null=True)
     age = models.IntegerField(null=True)
-    email = models.EmailField(unique=True)
     phone_number = models.CharField(max_length=20, null=True)
     TYPE_CHOICES = (
         ('renter', 'Renter'),
         ('landlord', 'Landlord'),
     )
     type_of_user = models.CharField(max_length=8, choices=TYPE_CHOICES)
-    id_proof = models.CharField(max_length=255, null=True)
+    #id_proof = models.CharField(max_length=255, null=True)
     date_of_birth = models.DateField(null=True)
 
 class Properties(models.Model):
