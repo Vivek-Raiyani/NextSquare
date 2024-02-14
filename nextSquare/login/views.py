@@ -23,6 +23,7 @@ def log(request):
 
 def signup(request):
         # code to  register user  security and input is valif=d remaining
+        # user input validation before saving the user
         if request.method=='POST':
                 username=request.POST['username']
                 firstname=request.POST['firstname']
@@ -40,9 +41,9 @@ def signup(request):
                         user.email=email
                         user.password=password
                         user.save()
-                        return render(request,'login/login.html' )
+                        return redirect('login:login')
         #return HttpResponse('hello')
-        return redirect(request, 'login/signup.html')
+        return render(request,'login/signup.html' )
 
 def logo(request):
         logout(request)
