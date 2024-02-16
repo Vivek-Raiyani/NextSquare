@@ -4,7 +4,7 @@
 {% block navigation %}
   {% if user.is_authenticated %}
     <div class='container'>
-      <nav class='navbar navbar-expand-lg'>
+      <nav class='navbar navbar-expand-lg navbar-light bg-light'>
       <div class='container-fluid'>
           <a class="navbar-brand" href="#">home icon</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
@@ -24,7 +24,10 @@
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'login:logout' %}">logout</a>
-              </li>  
+              </li>
+              <li class="nav-item">
+              <a class="nav-link" href=""></a>
+              </li>
             </ul>
       </div> 
       </nav>
@@ -62,11 +65,12 @@
 <!-- property listed display  grid layout first we need to manage how many files to be shoen in a row and
 how many rows to be shown in grid layout  using django
 -->
-{% for  x in properties  %}
+
       <div class='row'>
-        {% include 'home/property_card.html' with property=x %}
+        {% for properties in properties %}
+        {% include 'home/property_card.html' with property=properties %}
+        {% endfor %}
       </div>
-    {% endfor %}
 
 {% endblock %}
 
